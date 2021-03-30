@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>test2</title>
+    <title>cloudMoveTest</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script>
         /**
@@ -1102,7 +1102,7 @@
             {
                 var speed = 20000 + Math.floor(Math.random() * 15000);
                 var top = -100 + Math.floor(Math.random() * document.documentElement.clientHeight/3);
-                var pop = -200 + Math.floor(Math.random() * 1000);
+                var pop = -200 + Math.floor(Math.random() * document.documentElement.clientWidth);
                 var $div = $("<div>").css({"position":"absolute", "top":top,"left": pop}).animate({
                     left:$("#sky").width()
                 },speed,"linear",function(){
@@ -1111,22 +1111,17 @@
                 $div.append('<img src="' + url + '">');
                 $("#sky").append($div);
             }
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud2.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud2.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud2.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud1.png");
-            firstAddObject("./image/cloud2.png");
-            firstAddObject("./image/cloud1.png");
+
+            var first =  Math.floor(document.documentElement.clientWidth/50);
+            console.log(first);
+            for(let step = 0; step < first; step++) {
+                if(step%2 == 0) {
+                    firstAddObject("./image/cloud1.png");
+                    firstAddObject("./image/cloud1.png");
+                }else{
+                    firstAddObject("./image/cloud2.png");
+                }
+            }
 
             //timer
             (function t() {
