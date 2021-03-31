@@ -1100,7 +1100,7 @@
             }
             function firstAddObject(url)
             {
-                var speed = 20000 + Math.floor(Math.random() * 15000);
+                var speed = 10000 + Math.floor(Math.random() * 5000);
                 var top = -100 + Math.floor(Math.random() * document.documentElement.clientHeight/3);
                 var pop = -200 + Math.floor(Math.random() * document.documentElement.clientWidth);
                 var $div = $("<div>").css({"position":"absolute", "top":top,"left": pop}).animate({
@@ -1112,7 +1112,7 @@
                 $("#sky").append($div);
             }
 
-            var first =  Math.floor(document.documentElement.clientWidth/50);
+            var first =  Math.floor(document.documentElement.clientWidth/100);
             console.log(first);
             for(let step = 0; step < first; step++) {
                 if(step%2 == 0) {
